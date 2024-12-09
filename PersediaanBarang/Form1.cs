@@ -17,6 +17,7 @@ namespace PersediaanBarang
     {
         public Form1()
         {
+            //coba
             InitializeComponent();
             saveMode(); // <-- sdh memanggil ikat
             sambungDataBase();
