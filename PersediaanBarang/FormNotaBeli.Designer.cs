@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -191,6 +191,7 @@
             this.txtTelpon.Name = "txtTelpon";
             this.txtTelpon.Size = new System.Drawing.Size(253, 26);
             this.txtTelpon.TabIndex = 1;
+            this.txtTelpon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelpon_KeyPress);
             // 
             // txtTgl
             // 
@@ -264,8 +265,8 @@
             // qty
             // 
             this.qty.DataPropertyName = "qty";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.qty.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.qty.DefaultCellStyle = dataGridViewCellStyle1;
             this.qty.HeaderText = "Qty";
             this.qty.MinimumWidth = 8;
             this.qty.Name = "qty";
@@ -275,10 +276,10 @@
             // harga
             // 
             this.harga.DataPropertyName = "harga";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            this.harga.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.harga.DefaultCellStyle = dataGridViewCellStyle2;
             this.harga.HeaderText = "Harga";
             this.harga.MinimumWidth = 8;
             this.harga.Name = "harga";
@@ -288,10 +289,10 @@
             // jumlah
             // 
             this.jumlah.DataPropertyName = "jumlah";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.jumlah.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.jumlah.DefaultCellStyle = dataGridViewCellStyle3;
             this.jumlah.HeaderText = "Jumlah";
             this.jumlah.MinimumWidth = 8;
             this.jumlah.Name = "jumlah";
@@ -417,6 +418,7 @@
             this.btnClose.Size = new System.Drawing.Size(68, 54);
             this.btnClose.TabIndex = 15;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnEdit
             // 

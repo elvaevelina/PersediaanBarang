@@ -16,6 +16,7 @@ namespace PersediaanBarang
         {
             InitializeComponent();
         }
+        private int loginAttempts = 0;
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -27,18 +28,28 @@ namespace PersediaanBarang
             string username, password;
             username = txtUserName.Text;
             password = txtPassword.Text;
+
             if (pemakai.login(username, password))
             {
-                MessageBox.Show("silahkan masuk");
+                MessageBox.Show("Silahkan masuk");
                 FormMenuUtama fmu = new FormMenuUtama(username);
                 fmu.ShowDialog();
                 txtUserName.Clear();
                 txtPassword.Clear();
                 txtUserName.Focus();
+
+                loginAttempts = 0; // Reset percobaan login jika berhasil.
             }
             else
             {
-                MessageBox.Show("access denied");
+                loginAttempts++; // Tambah percobaan login yang gagal.
+                MessageBox.Show("Access denied");
+
+                if (loginAttempts >= 3) // Periksa apakah sudah 3 kali gagal login.
+                {
+                    MessageBox.Show("Anda telah gagal login 3 kali. Program akan keluar.");
+                    Application.Exit(); // Keluar dari program.
+                }
             }
 
 

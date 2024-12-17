@@ -177,6 +177,17 @@ namespace PersediaanBarang
             this.supplier.getBS().MoveLast();
         }
 
-        
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void txtTelpon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

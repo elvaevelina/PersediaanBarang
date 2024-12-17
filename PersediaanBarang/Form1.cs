@@ -187,6 +187,7 @@ namespace PersediaanBarang
                 querySQL = "INSERT INTO barang(kodeBarang, namaBarang, hargaBeli, hargaJual, satuan) " +
                     "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')";
                 querySQL = string.Format(querySQL, kode, nama, hargaBeli, hargaJual, satuan);
+                //querySQL = $"INSERT INTO barang(kodeBarang, namaBarang, hargaBeli, hargaJual, satuan) VALUES('{kode}', '{nama}', '{hargaBeli}', '{hargaJual}', '{satuan}'";
             }
             else
             {
@@ -303,6 +304,30 @@ namespace PersediaanBarang
             int baris = bs.Find("kodeBarang", frm.kodeCari);
             bs.Position = baris;
             frm.Dispose();
+        }
+
+        private void txtHargaBeli_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtHargaJual_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtStok_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

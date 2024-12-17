@@ -195,6 +195,7 @@
             this.txtTelpon.Name = "txtTelpon";
             this.txtTelpon.Size = new System.Drawing.Size(346, 26);
             this.txtTelpon.TabIndex = 1;
+            this.txtTelpon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelpon_KeyPress);
             // 
             // txtKota
             // 
@@ -211,6 +212,7 @@
             this.btnClose.Size = new System.Drawing.Size(65, 40);
             this.btnClose.TabIndex = 3;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnEdit
             // 

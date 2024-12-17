@@ -16,12 +16,14 @@ namespace PersediaanBarang
         {
             InitializeComponent();
             dgvDetailJual.DataSource = detail.getBS(); //nampilin ke dgv
+            modeOutput();
         }
         Tabel master = new Tabel("notaJual");
         Tabel detail = new Tabel("view_itemjual");
 
         void modeOutput()
         {
+            txtKodeBarang.Enabled = false;
             txtTgl.Enabled = false;
             //navigasi
             btnTop.Enabled = true;
@@ -45,6 +47,7 @@ namespace PersediaanBarang
         }
         void modeInput()
         {
+            txtKodeBarang.Enabled = true;
             txtTgl.Enabled = true;
 
             //navigasi
@@ -183,24 +186,39 @@ namespace PersediaanBarang
 
         private void txtKodeBarang_KeyUp(object sender, KeyEventArgs e) //PERBAIKIII!!!
         {
-            if (e.KeyCode == Keys.Enter && txtKodeBarang.Text.Length>0)
+            if (e.KeyCode == Keys.Enter && txtKodeBarang.Text.Length > 0)
             {
-                detail.getBS().MoveLast();
                 string idnya = ((DataRowView)detail.getBS().Current).Row["idItemNotaJual"].ToString();
-                //MessageBox.Show(idnya);
+                // MessageBox.Show(idnya);
+
                 if (txtKodeBarang.Text.Substring(0, 1) == "+")
                 {
                     int tambah = int.Parse(txtKodeBarang.Text.Substring(1));
-                    string strSql = $"UPDATE itemNotaJual SET qty = qty+{tambah} WHERE idItemNotaJual = '{idnya}'";
-                    detail.eksekusiSQL(strSql);
+
+                    // Tambahan kode mulai
+                    int stokTersedia = int.Parse(((DataRowView)barang.getBS().Current).Row["stok"].ToString());
+                    if (tambah > stokTersedia)
+                    {
+                        MessageBox.Show($"Stok tidak mencukupi. Hanya {stokTersedia} yang dapat dijual. Qty akan diubah menjadi 0",
+                            "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        string strSql = $"UPDATE itemNotaJual SET qty = 0 WHERE idItemNotaJual = '{idnya}'";
+                        detail.eksekusiSQL(strSql);
+                        txtKodeBarang.Clear();
+                        txtKodeBarang.Focus();
+                        return;
+                    }
+                    // Tambahan kode selesai
+
+                    string strSqlTambah = $"UPDATE itemNotaJual SET qty = qty+{tambah} WHERE idItemNotaJual = '{idnya}'";
+                    detail.eksekusiSQL(strSqlTambah);
                     txtKodeBarang.Clear();
                     txtKodeBarang.Focus();
                 }
                 else if (txtKodeBarang.Text.Substring(0, 1) == "-")
                 {
                     int kurang = int.Parse(txtKodeBarang.Text.Substring(1));
-                    string strSql = $"UPDATE itemNotaJual SET qty = qty-{kurang} WHERE idItemNotaJual = '{idnya}'";
-                    detail.eksekusiSQL(strSql);
+                    string strSqlKurang = $"UPDATE itemNotaJual SET qty = qty-{kurang} WHERE idItemNotaJual = '{idnya}'";
+                    detail.eksekusiSQL(strSqlKurang);
                     txtKodeBarang.Clear();
                     txtKodeBarang.Focus();
                 }
@@ -222,6 +240,39 @@ namespace PersediaanBarang
 
 
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            string tglSekarang = DateTime.Now.ToString("yyyy-MM-dd");
+            string strSql = $"INSERT INTO notaJual(tgl) VALUES('{tglSekarang}')";
+            long noNotanya = master.eksekusiSQL_getId(strSql);
+            master.getBS().Position = master.getBS().Find("noNotaJual", noNotanya);
+            tampil();
+            modeInput();
+            txtKodeBarang.Focus();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult jwb = MessageBox.Show("yakin menghapus nota ini?",
+                "konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (jwb == DialogResult.Yes)
+            {
+                string strSql = $"DELETE FROM notaJual WHERE noNotaJual='{txtNoNotaJual.Text}'";
+                master.eksekusiSQL(strSql);
+                master.getBS().MoveLast();
+                MessageBox.Show("pengahpusan berhasil");
+            }
+            else
+            {
+                MessageBox.Show("penghapusan dibatalkan");
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

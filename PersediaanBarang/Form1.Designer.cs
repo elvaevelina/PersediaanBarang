@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblKode = new System.Windows.Forms.Label();
             this.lblNamaBarang = new System.Windows.Forms.Label();
             this.lbljudul = new System.Windows.Forms.Label();
@@ -150,6 +150,7 @@
             this.txtHargaBeli.Name = "txtHargaBeli";
             this.txtHargaBeli.Size = new System.Drawing.Size(137, 26);
             this.txtHargaBeli.TabIndex = 1;
+            this.txtHargaBeli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHargaBeli_KeyPress);
             // 
             // txtHargaJual
             // 
@@ -157,6 +158,7 @@
             this.txtHargaJual.Name = "txtHargaJual";
             this.txtHargaJual.Size = new System.Drawing.Size(137, 26);
             this.txtHargaJual.TabIndex = 1;
+            this.txtHargaJual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHargaJual_KeyPress);
             // 
             // txtStok
             // 
@@ -165,6 +167,7 @@
             this.txtStok.Name = "txtStok";
             this.txtStok.Size = new System.Drawing.Size(137, 26);
             this.txtStok.TabIndex = 1;
+            this.txtStok.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStok_KeyPress);
             // 
             // txtSatuan
             // 
@@ -333,10 +336,10 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "hargaBeli";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column3.HeaderText = "Harga Beli";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
@@ -346,10 +349,10 @@
             // Column4
             // 
             this.Column4.DataPropertyName = "hargaJual";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column4.HeaderText = "Harga Jual";
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
@@ -359,10 +362,10 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "stok";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column5.HeaderText = "Stok";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";

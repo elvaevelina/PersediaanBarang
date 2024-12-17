@@ -196,9 +196,17 @@ namespace PersediaanBarang
 
         private void txtQty_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                txtHarga.Focus();   
+                if (decimal.TryParse(txtQty.Text, out decimal qtyValue))
+                {
+                    if (qtyValue < 0)
+                    {
+                        txtQty.Text = "0";
+                    }
+                }
+
+                txtHarga.Focus();
             }
         }
 
@@ -217,6 +225,8 @@ namespace PersediaanBarang
                 e.Handled = true;
             }
         }
+
+
 
         private void txtHarga_KeyUp(object sender, KeyEventArgs e)
         {
@@ -248,6 +258,7 @@ namespace PersediaanBarang
                 txtQty.Text = dgvDetailBeli.CurrentRow.Cells["qty"].Value.ToString();
                 txtHarga.Text = dgvDetailBeli.CurrentRow.Cells["harga"].Value.ToString();
                 txtQty.Focus();
+                txtNamaBarang.Enabled = false;
             }
 
             if ((e.KeyCode == Keys.Delete || e.KeyCode==Keys.Back) && btnSave.Visible )
@@ -324,6 +335,19 @@ namespace PersediaanBarang
             else
             {
                 MessageBox.Show("penghapusan dibatalkan");
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void txtTelpon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
             }
         }
     }

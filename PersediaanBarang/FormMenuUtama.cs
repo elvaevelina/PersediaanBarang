@@ -57,7 +57,9 @@ namespace PersediaanBarang
 
         private void penjualanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("maaf belum dibuat");
+            FormNotaJual fnj = new FormNotaJual();
+            fnj.ShowDialog();
+            fnj.Dispose();
         }
     }
 }
