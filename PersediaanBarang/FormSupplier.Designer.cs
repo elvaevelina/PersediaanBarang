@@ -106,7 +106,9 @@
             // 
             // txtKodeSupplier
             // 
+            this.txtKodeSupplier.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtKodeSupplier.Location = new System.Drawing.Point(148, 43);
+            this.txtKodeSupplier.MaxLength = 3;
             this.txtKodeSupplier.Name = "txtKodeSupplier";
             this.txtKodeSupplier.Size = new System.Drawing.Size(98, 26);
             this.txtKodeSupplier.TabIndex = 1;
@@ -207,7 +209,7 @@
             // btnClose
             // 
             this.btnClose.Image = global::PersediaanBarang.Properties.Resources._12_Close;
-            this.btnClose.Location = new System.Drawing.Point(844, 142);
+            this.btnClose.Location = new System.Drawing.Point(844, 145);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(65, 40);
             this.btnClose.TabIndex = 3;
@@ -222,6 +224,7 @@
             this.btnEdit.Size = new System.Drawing.Size(65, 40);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnEnd
             // 
@@ -271,6 +274,7 @@
             this.btnFind.Size = new System.Drawing.Size(65, 40);
             this.btnFind.TabIndex = 9;
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnBack
             // 
@@ -300,6 +304,7 @@
             this.btnUndo.Size = new System.Drawing.Size(65, 40);
             this.btnUndo.TabIndex = 12;
             this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnDelete
             // 

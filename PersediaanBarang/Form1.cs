@@ -165,6 +165,7 @@ namespace PersediaanBarang
             //tambah focus
             txtKode.Focus();
 
+
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
@@ -174,6 +175,16 @@ namespace PersediaanBarang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtKode.Text))
+            {
+                MessageBox.Show("Kode Barang tidak boleh kosong");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtNamaBarang.Text))
+            {
+                MessageBox.Show("Nama Barang tidak boleh kosong");
+                return;
+            }
             string kode, nama, hargaBeli, hargaJual, satuan, querySQL;
             kode=txtKode.Text.Trim();
             nama=txtNamaBarang.Text.Trim();
@@ -255,7 +266,7 @@ namespace PersediaanBarang
                 {
                     if (ex.Message.Contains("Cannot delete"))
                     {
-                        MessageBox.Show("Kode Barang = " + txtKode.Text.Trim() + "sudah digunakan\n" +
+                        MessageBox.Show("Kode Barang = " + txtKode.Text.Trim() + "sedang digunakan\n" +
                             "Silahkan menggunakan kode yang lain");
                     }
                     else

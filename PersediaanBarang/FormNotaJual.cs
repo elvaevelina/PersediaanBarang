@@ -32,7 +32,7 @@ namespace PersediaanBarang
             btnNext.Enabled = true;
 
             //controller
-            btnFind.Enabled = true;
+            btnFind.Enabled = false;
             btnPrint.Enabled = true;
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
@@ -182,6 +182,7 @@ namespace PersediaanBarang
         private void btnSave_Click(object sender, EventArgs e)
         {
             modeOutput();
+            tampil();
         }
 
         private void txtKodeBarang_KeyUp(object sender, KeyEventArgs e) //PERBAIKIII!!!
@@ -273,6 +274,11 @@ namespace PersediaanBarang
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            modeOutput();
         }
     }
 }

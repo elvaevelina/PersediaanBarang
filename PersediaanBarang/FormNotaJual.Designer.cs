@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnEnd = new System.Windows.Forms.Button();
@@ -95,7 +95,7 @@
             // btnSave
             // 
             this.btnSave.Image = global::PersediaanBarang.Properties.Resources._10_Save;
-            this.btnSave.Location = new System.Drawing.Point(547, 527);
+            this.btnSave.Location = new System.Drawing.Point(547, 494);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 54);
             this.btnSave.TabIndex = 46;
@@ -154,12 +154,13 @@
             // btnUndo
             // 
             this.btnUndo.Image = global::PersediaanBarang.Properties.Resources._11_Undo;
-            this.btnUndo.Location = new System.Drawing.Point(621, 527);
+            this.btnUndo.Location = new System.Drawing.Point(621, 494);
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(68, 54);
             this.btnUndo.TabIndex = 52;
             this.btnUndo.UseVisualStyleBackColor = true;
             this.btnUndo.Visible = false;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnDelete
             // 
@@ -299,8 +300,8 @@
             // qty
             // 
             this.qty.DataPropertyName = "qty";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.qty.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.qty.DefaultCellStyle = dataGridViewCellStyle1;
             this.qty.HeaderText = "Qty";
             this.qty.MinimumWidth = 8;
             this.qty.Name = "qty";
@@ -310,10 +311,10 @@
             // harga
             // 
             this.harga.DataPropertyName = "harga";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            this.harga.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.harga.DefaultCellStyle = dataGridViewCellStyle2;
             this.harga.HeaderText = "Harga";
             this.harga.MinimumWidth = 8;
             this.harga.Name = "harga";
@@ -323,10 +324,10 @@
             // jumlah
             // 
             this.jumlah.DataPropertyName = "jumlah";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N0";
-            dataGridViewCellStyle12.NullValue = null;
-            this.jumlah.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.jumlah.DefaultCellStyle = dataGridViewCellStyle3;
             this.jumlah.HeaderText = "Jumlah";
             this.jumlah.MinimumWidth = 8;
             this.jumlah.Name = "jumlah";

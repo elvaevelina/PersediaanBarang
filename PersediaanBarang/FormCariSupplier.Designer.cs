@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
-            this.lblCari = new System.Windows.Forms.Label();
-            this.txtCari = new System.Windows.Forms.TextBox();
             this.kodeSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namaSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alamat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telpon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCari = new System.Windows.Forms.Label();
+            this.txtCari = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,23 +59,6 @@
             this.dgvSupplier.Size = new System.Drawing.Size(1048, 394);
             this.dgvSupplier.TabIndex = 5;
             this.dgvSupplier.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvSupplier_KeyDown);
-            // 
-            // lblCari
-            // 
-            this.lblCari.AutoSize = true;
-            this.lblCari.Location = new System.Drawing.Point(14, 21);
-            this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(192, 20);
-            this.lblCari.TabIndex = 4;
-            this.lblCari.Text = "Nama Supplier yang dicari";
-            // 
-            // txtCari
-            // 
-            this.txtCari.Location = new System.Drawing.Point(216, 18);
-            this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new System.Drawing.Size(844, 26);
-            this.txtCari.TabIndex = 3;
-            this.txtCari.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
             // 
             // kodeSupplier
             // 
@@ -111,6 +94,7 @@
             this.telpon.MinimumWidth = 8;
             this.telpon.Name = "telpon";
             this.telpon.ReadOnly = true;
+            this.telpon.Width = 150;
             // 
             // kota
             // 
@@ -119,6 +103,24 @@
             this.kota.MinimumWidth = 8;
             this.kota.Name = "kota";
             this.kota.ReadOnly = true;
+            this.kota.Width = 150;
+            // 
+            // lblCari
+            // 
+            this.lblCari.AutoSize = true;
+            this.lblCari.Location = new System.Drawing.Point(14, 21);
+            this.lblCari.Name = "lblCari";
+            this.lblCari.Size = new System.Drawing.Size(192, 20);
+            this.lblCari.TabIndex = 4;
+            this.lblCari.Text = "Nama Supplier yang dicari";
+            // 
+            // txtCari
+            // 
+            this.txtCari.Location = new System.Drawing.Point(216, 18);
+            this.txtCari.Name = "txtCari";
+            this.txtCari.Size = new System.Drawing.Size(844, 26);
+            this.txtCari.TabIndex = 3;
+            this.txtCari.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
             // 
             // FormCariSupplier
             // 
@@ -128,6 +130,8 @@
             this.Controls.Add(this.dgvSupplier);
             this.Controls.Add(this.lblCari);
             this.Controls.Add(this.txtCari);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCariSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Cari Supplier";

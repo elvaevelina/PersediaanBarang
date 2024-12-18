@@ -153,6 +153,7 @@
             // 
             // txtKodeSupplier
             // 
+            this.txtKodeSupplier.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtKodeSupplier.Enabled = false;
             this.txtKodeSupplier.Location = new System.Drawing.Point(126, 18);
             this.txtKodeSupplier.Name = "txtKodeSupplier";
@@ -444,7 +445,7 @@
             // btnSave
             // 
             this.btnSave.Image = global::PersediaanBarang.Properties.Resources._10_Save;
-            this.btnSave.Location = new System.Drawing.Point(547, 532);
+            this.btnSave.Location = new System.Drawing.Point(547, 499);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 54);
             this.btnSave.TabIndex = 18;
@@ -503,12 +504,13 @@
             // btnUndo
             // 
             this.btnUndo.Image = global::PersediaanBarang.Properties.Resources._11_Undo;
-            this.btnUndo.Location = new System.Drawing.Point(621, 532);
+            this.btnUndo.Location = new System.Drawing.Point(621, 499);
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(68, 54);
             this.btnUndo.TabIndex = 24;
             this.btnUndo.UseVisualStyleBackColor = true;
             this.btnUndo.Visible = false;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnDelete
             // 

@@ -36,7 +36,7 @@ namespace PersediaanBarang
             btnNext.Enabled = true;
 
             //controller
-            btnFind.Enabled = true;
+            btnFind.Enabled = false;
             btnPrint.Enabled = true;
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
@@ -154,6 +154,7 @@ namespace PersediaanBarang
         private void FormNotaBeli_Load(object sender, EventArgs e)
         {
             tampil();
+            btnFind.Enabled = false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -165,6 +166,7 @@ namespace PersediaanBarang
         {
             modeOutput();
             //dgvDetailBeli.AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.None();
+            CalculateTotal() ;
         }
 
         private void txtKodeBarang_KeyDown(object sender, KeyEventArgs e)
@@ -349,6 +351,11 @@ namespace PersediaanBarang
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            modeOutput();
         }
     }
 }
